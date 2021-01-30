@@ -1,74 +1,24 @@
 # include "omok.h"
 
 void game_control(void) {
-    // °ÔÀÓÀÇ ½ÂÆÐ¸¦ °áÁ¤Áþ´Â ÇÔ¼ö
+    // ê²Œìž„ì˜ ìŠ¹íŒ¨ë¥¼ ê²°ì •ì§“ëŠ” í•¨ìˆ˜
 };
 
 void gotoxy(int x, int y) {
-    // È­¸é»óÀÇ Ä¿¼­ À§Ä¡¸¦ ÆÄ¾ÇÇÏ°í Á¦¾îÇÏ´Â ÇÔ¼ö
+    // í™”ë©´ìƒì˜ ì»¤ì„œ ìœ„ì¹˜ë¥¼ íŒŒì•…í•˜ê³  ì œì–´í•˜ëŠ” í•¨ìˆ˜
     COORD pos = { x,y };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 };
 
-void show_stone()     // ¹ÙµÏµ¹À» ³õ´Â ÇÔ¼ö
+void show_stone()     // ë°”ë‘‘ëŒì„ ë†“ëŠ” í•¨ìˆ˜
 {
-	char key; // Å°º¸µå ÀÔ·Â¹Þ´Â º¯¼ö
-	int x = 0, y = 1, x_b = 38, y_b = 20, order = 0; // x, y = x,yÁÂÇ¥, x_b,y_b = °¢ ÃàÀÇ ÃÖ´ñ°ª, order = µ¹ ³õ´Â ¼ø¼­ ±¸ºÐ º¯¼ö
-	int* x1 = &x, * y1 = &y;
-	int map[19][19];
-	char* stone_color[2] = { "¡Û", "¡Ü" };
-	//int end = 3;
 
-	gotoxy(x, y);
-	show_map();
-
-	while (1)
-	{
-		gotoxy(x, y);
-		key = _getch(); // Å°ÀÔ·Â¹ÞÀ½
-
-		if (key >= 72) // ÀÔ·Â¹ÞÀº °ªÀÌ ÀÌµ¿°ªÀÌ¸é
-		{
-			move_position(key, x1, y1, x_b, y_b); // ¿òÁ÷ÀÌ´Â ÇÔ¼ö È£Ãâ
-		}
-		else if (key == 32) // ÀÔ·Â¹ÞÀº °ªÀÌ ½ºÆäÀÌ½º¹ÙÀÌ¸é
-		{
-			printf("%s", stone_color[order]); // ÇöÀç ÁÂÇ¥À§Ä¡¿¡ µ¹À» ³õ´Â´Ù.
-
-			if (order == 0) // µ¹ÀÌ °ËÁ¤ÀÌ¶ó¸é
-			{
-				map[y][x] = order; // ÇöÀç À§Ä¡¿¡ 0(°ËÀºµ¹ÀÓÀ» ¾Ë·ÁÁÜ)À» ÀúÀå
-				/*end = game_control();
-				if (end == 0) // Èæµ¹ÀÌ ÀÌ±ä´Ù¸é ¹ÝÈ¯°ª 0.
-				{
-					gotoxy(1, 21);
-					printf("°ËÀºµ¹ÀÌ ÀÌ°å½À´Ï´Ù.");
-					break; // ½ÂÀÚ°¡ ³ª¿À¸é Á¾·á.
-				}*/
-				order = 1; // ´ÙÀ½ ¼ø¼­¸¦ À§ÇØ °ª º¯°æ
-			}
-			else // µ¹ÀÌ ÇÏ¾çÀÌ¶ó¸é
-			{
-				map[y][x] = order; // ÇöÀç À§Ä¡¿¡ 1(¹éµ¹ÀÓÀ» ¾Ë·ÁÁÜ)À» ÀúÀå
-				/*end = game_control();
-				if (end == 1) // ¹éµ¹ÀÌ ÀÌ±ä´Ù¸é ¹ÝÈ¯°ª 1.
-				{
-					gotoxy(1, 21);
-					printf("¹éµ¹ÀÌ ÀÌ°å½À´Ï´Ù.");
-					break; // ½ÂÀÚ°¡ ³ª¿À¸é Á¾·á.
-				}*/
-				order = 0; // ´ÙÀ½ ¼ø¼­¸¦ À§ÇØ °ª º¯°æ
-			}
-		}
-	}
-
-	return 0;
 }
 
 void move_position() {
-    // »ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â È­»ìÇ¥ Å°¿¡ µû¶ó ÁÂÇ¥ x, y°ªÀ» º¯°æÇÏ´Â ÇÔ¼ö
+    // ì‚¬ìš©ìžê°€ ìž…ë ¥í•˜ëŠ” í™”ì‚´í‘œ í‚¤ì— ë”°ë¼ ì¢Œí‘œ x, yê°’ì„ ë³€ê²½í•˜ëŠ” í•¨ìˆ˜
 };
 
 void show_map() {
-    //¹ÙµÏÆÇÀ» º¸¿©ÁÖ´Â ÇÔ¼ö
+    //ë°”ë‘‘íŒì„ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
 };
