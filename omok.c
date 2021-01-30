@@ -12,7 +12,7 @@ void gotoxy(int x, int y) {
 
 void show_stone()     // 바둑돌을 놓는 함수
 {
-    aaaaaaaaa
+   adf
 };
 
 void move_position() {
