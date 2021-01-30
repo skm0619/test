@@ -22,7 +22,7 @@ void move_position() {
         sdf
         asdf
         asd
-        //수정
+        //수정 2
         fasd
 };
 
