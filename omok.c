@@ -12,8 +12,8 @@ void gotoxy(int x, int y) {
 
 void show_stone()     // 바둑돌을 놓는 함수
 {
-
-}
+    aaaaaaaaa
+};
 
 void move_position() {
     // 사용자가 입력하는 화살표 키에 따라 좌표 x, y값을 변경하는 함수
